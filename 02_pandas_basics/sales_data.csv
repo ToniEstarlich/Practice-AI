@@ -1,0 +1,9 @@
+date,product,category,quantity,price,city
+2026-01-01,Laptop,Electronics,1,1200,London
+2026-01-02,Mouse,Accessories,2,25,London
+2026-01-03,Keyboard,Accessories,1,45,Manchester
+2026-01-04,Laptop,Electronics,3,1100,London
+2026-01-05,Monitor,Electronics,1,300,Birmingham
+2026-01-06,Mouse,Accessories,4,20,London
+2026-01-07,Keyboard,Accessories,2,50,Manchester
+2026-01-08,Monitor,Electronics,1,280,Birmingham
