@@ -13,38 +13,38 @@ def load_txt(file_name):
         return f.read()
 
 
+def build_knowledge(text):
+    data = {}
+
+    for line in text.split("\n"):
+        if ":" in line:
+            key, value = line.split(":", 1)
+            data[key.strip().lower()] = value.strip()
+
+    return data
+    
+def find_answer(question, knowledge):
+    question = question.lower()
+
+    for key, value in knowledge.items():
+        if key in question:
+            return value
+        
+    return None
+
 @app.post("/chat")
 def chat(req: ChatRequest):
 
-    context = load_txt(req.file_name)
+    text = load_txt(req.file_name)
+    knowledge = build_knowledge(text)
 
-    question = req.message.lower()
+    answer = find_answer(req.message, knowledge)
 
-    if "opening hours" in question:
-        return {
-            "answer": "We are open from 12:00 to 22:00"
-        }
-
-    if "menu" in question:
-        return {
-            "answer": "We have pizza, pasta and lasagna"
-        }
-
-    if "phone" in question:
-        return {
-            "answer": "Our phone number is 123456789"
-        }
-
-    if "address" in question:
-        return {
-            "answer": "We are at Calle Mayor 12"
-        }
-
-    if "reservation" in question:
-        return {
-            "answer": "Reservations are only by phone"
-        }
-
+    if answer:
+        return {"answer": answer}
+    
     return {
-        "answer": f"I don't understand the question.\n\nAvailable information:\n{context}"
+        "answer": "I don't Know thet yet.",
+        "available_data": knowledge
     }
+    
