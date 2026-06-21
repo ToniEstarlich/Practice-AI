@@ -7,7 +7,8 @@ if "youtube.com" not in url and "youtu.be" not in url:
     exit()
 
 ydl_opts = {
-    "format": "bestvideo+bestaudio/best",
+    "format": "bv*[vcodec^=avc1]+ba/b",
+   #  "format": "bestvideo+bestaudio/best",
     "merge_output_format": "mkv",
     "ffmpeg_location": r"C:\Users\Antonio Estarlich\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-full_build\bin",
     "outtmpl": "%(title)s.%(ext)s",
