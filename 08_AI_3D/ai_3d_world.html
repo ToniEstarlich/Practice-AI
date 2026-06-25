@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI 3D World</title>
+    <style>
+        body { margin: 0; overflow: hidden; font-family: Arial; }
+        #ui {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="ui">
+    <input id="cmd" placeholder="e.g. create red cube">
+</div>
+
+<script type="module">
+import * as THREE from 'https://unpkg.com/three@0.179.1/build/three.module.js';
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x111111);
+
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+camera.position.z = 5;
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// light
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(5,5,5);
+scene.add(light);
+
+// store objects
+const objects = [];
+
+// simple AI parser (RULE BASED FIRST)
+function parseCommand(text) {
+    text = text.toLowerCase();
+
+    let color = 0xffffff;
+    if (text.includes("red")) color = 0xff0000;
+    if (text.includes("green")) color = 0x00ff00;
+    if (text.includes("blue")) color = 0x0000ff;
+
+    if (text.includes("cube")) {
+        const geo = new THREE.BoxGeometry();
+        const mat = new THREE.MeshStandardMaterial({ color });
+        const mesh = new THREE.Mesh(geo, mat);
+        mesh.position.x = (Math.random() - 0.5) * 4;
+        mesh.position.y = (Math.random() - 0.5) * 4;
+        scene.add(mesh);
+        objects.push(mesh);
+    }
+
+    if (text.includes("sphere")) {
+        const geo = new THREE.SphereGeometry(0.7, 32, 32);
+        const mat = new THREE.MeshStandardMaterial({ color });
+        const mesh = new THREE.Mesh(geo, mat);
+        mesh.position.x = (Math.random() - 0.5) * 4;
+        mesh.position.y = (Math.random() - 0.5) * 4;
+        scene.add(mesh);
+        objects.push(mesh);
+    }
+}
+
+// input
+document.getElementById("cmd").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        parseCommand(e.target.value);
+        e.target.value = "";
+    }
+});
+
+// animation
+function animate() {
+    requestAnimationFrame(animate);
+
+    objects.forEach(o => {
+        o.rotation.x += 0.01;
+        o.rotation.y += 0.01;
+    });
+
+    renderer.render(scene, camera);
+}
+
+animate();
+</script>
+
+</body>
+</html>
