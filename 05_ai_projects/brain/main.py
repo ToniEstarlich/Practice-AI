@@ -1,16 +1,41 @@
-import tensorflow as tf
-import numpy as np
+from flask import Flask, render_template, request, jsonify
+import requests
+import json
 
-# data: y = 2x - 1
-x = np.array([-1, 0, 1, 2, 3, 4], dtype=float)
-y = np.array([-3, -1, 1, 3, 5, 7], dtype=float)
+app = Flask(__name__)
 
-model = tf.keras.Sequential([
-    tf.keras.layers.Dense(1, input_shape=[1])
-])
+@app.route("/")
+def home():
+    return render_template("index.html")
 
-model.compile(optimizer='sgd', loss='mean_squared_error')
+@app.route("/chat", methods=["POST"])
+def chat():
+    data = request.get_json()
+    user = data["message"]
 
-model.fit(x, y, epochs=500, verbose=0)
+    response = requests.post(
+        "http://localhost:11434/api/generate",
+        json={
+            "model": "llama3",
+            "prompt": user,
+            "stream": True
+        },
+        stream=True
+    )
 
-print(model.predict([10]))
+    output = ""
+
+    for line in response.iter_lines():
+        if line:
+            decoded = line.decode("utf-8")
+
+            try:
+                json_data = json.loads(decoded)
+                output += json_data.get("response", "")
+            except:
+                pass
+
+    return jsonify({"reply": output})
+
+if __name__ == "__main__":
+    app.run(debug=True)
