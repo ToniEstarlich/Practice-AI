@@ -1,0 +1,21 @@
+Here are the two detailed image generation prompts:
+
+IMAGE 1:
+"A tiny mouse with a bright green leaf cape perched on a moss-covered stone, surrounded by tall ferns and towering tree trunks in a sun-dappled forest clearing. The camera looks down from above, capturing the mouse's curious expression as it gazes up at a fluttering butterfly hovering just out of reach.
+
+Environment: Forest
+Lighting: Soft, warm sunlight filtering through the canopy above
+Camera angle: Looking down from directly above (45-degree angle)
+Style: Realistic, with textured details and subtle shading
+Colors: Earthy tones of green, brown, and beige, with pops of bright yellow from the butterfly's wings"
+
+IMAGE 2:
+"A mouse in a pair of hand-me-down goggles, peeking out from behind a fallen log in a misty forest glade. The camera is positioned at waist level, looking up at the mouse as it holds a small, shiny object (perhaps a lost penny or a fragment of glass) in its paws.
+
+Environment: Forest floor and surrounding underbrush
+Lighting: Soft, diffused mist light with subtle highlights on the mouse's goggles
+Camera angle: Waist-level shot, looking up at the mouse (30-degree angle)
+Style: Whimsical, with bold lines and textures, blending realism with fantasy elements
+Colors: Muted tones of gray, brown, and green, with warm highlights from the log and a hint of blue from the mist"
+
+Let me know if you'd like me to generate more prompts or make any changes!
