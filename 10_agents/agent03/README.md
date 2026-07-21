@@ -1,0 +1,91 @@
+Here is the formatted README.md file:
+
+# Syntax Agent Framework
+
+A modular Python framework to create AI agents with tools, memory and LLM integration.
+
+## Overview
+
+Syntax Agent is a framework designed to build reusable AI agents.
+
+Instead of creating every agent from scratch, developers can create specialized agents by combining:
+Brain (reasoning system)
+Memory (information storage)
+Tools (external capabilities)
+LLM providers
+Task execution
+
+## Architecture
+
+### Agent
+
+|
+|-- Brain
+|-- Memory
+|-- Tools
+|-- Scheduler
+|
+└── LLM
+
+## Example
+
+Create a simple agent:
+
+```python
+from syntax import Agent
+
+agent = Agent(
+    model="llama3"
+)
+
+agent.run(
+    "Explain artificial intelligence"
+)
+```
+
+## Adding tools
+
+Agents can be extended with tools:
+
+```python
+from syntax.tools import PDFTool
+
+agent.add_tool(
+    PDFTool()
+)
+```
+
+Example:
+
+```python
+agent.run(
+    "Create a financial report"
+)
+```
+
+## Features
+
+* Modular agent architecture
+* LLM integration
+* Tool system
+* Memory management
+* Task automation
+* Extensible design
+
+## Project Status
+
+Currently under development.
+
+## Roadmap
+
+* Basic Agent structure
+* Brain module
+* Tool system
+* Memory system
+* Scheduler
+* API integration
+* Multi-agent support
+
+## Author
+
+Antonio Estarlich
