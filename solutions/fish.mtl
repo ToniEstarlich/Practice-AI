@@ -1,0 +1,7 @@
+newmtl Orange
+Ka 1.0 0.3 0.0
+Kd 1.0 0.3 0.0
+
+newmtl Blue
+Ka 0.0 0.3 1.0
+Kd 0.0 0.3 1.0
