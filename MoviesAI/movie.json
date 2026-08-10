@@ -1,0 +1,57 @@
+{
+    "title": "Beneath the Neon",
+    "genre": "Sci-Fi Mystery",
+    "style": "Dark cyberpunk meets classical British noir",
+    "scenes": [
+        {
+            "scene_number": 1,
+            "duration_seconds": 5,
+            "description": "London is engulfed in alien firefights. Clara, a tech-savvy journalist, watches the chaos from a rooftop as glowing alien ships descend.",
+            "camera": "Drone shot sweeping across ruined streets, transitioning to a handheld close-up of Clara's terrified face",
+            "lighting": "Harsh neon reflections against smoke-filled skies, with flashes from energy weapons",
+            "characters": ["Clara"],
+            "dialogue": "This isn't a war... it's a search!",
+            "video_prompt": "Post-apocalyptic London skyline under crimson alien lights, shattered glass everywhere, Clara's POV camera shaking with panic, glowing symbols etched into alien armor"
+        },
+        {
+            "scene_number": 2,
+            "duration_seconds": 5,
+            "description": "Clara escapes through collapsing tunnels, discovering a fallen alien soldier with a glowing symbol on its chest.",
+            "camera": "Dynamic tracking shot following Clara through debris, switching to a low-angle close-up of the symbol",
+            "lighting": "Dim emergency lights casting long shadows, with the symbol emitting a pulsating blue glow",
+            "characters": ["Clara"],
+            "dialogue": "",
+            "video_prompt": "Clara dodging falling rubble in a dark tunnel, close-up of the glowing symbol on the alien's chest, glowing circuit patterns spreading across the walls"
+        },
+        {
+            "scene_number": 3,
+            "duration_seconds": 5,
+            "description": "Clara deciphers the symbol in a hidden library, finding ancient blueprints of London's underground infrastructure.",
+            "camera": "Static wide shot of the library, transitioning to a spinning 360-degree view of the blueprints",
+            "lighting": "Warm amber light from old lamps contrasting with the blueprints' electric blue ink",
+            "characters": ["Clara"],
+            "dialogue": "They're looking for the Heart... the city's ancient core.",
+            "video_prompt": "Dusty library with holographic blueprints floating in mid-air, Clara's fingers tracing glowing lines, dust motes sparkling in the light"
+        },
+        {
+            "scene_number": 4,
+            "duration_seconds": 5,
+            "description": "Clara reaches the subterranean chamber, revealing alien tech intertwined with London's forgotten history.",
+            "camera": "Slow dolly shot revealing the chamber's scale, switching to a vertigo-inducing spinning shot",
+            "lighting": "Cold bioluminescent light highlighting ancient mechanisms and alien machinery",
+            "characters": ["Clara"],
+            "dialogue": "",
+            "video_prompt": "Vast underground chamber with glowing gears and crystalline structures, London's history etched into the walls, light reflecting off metallic surfaces"
+        },
+        {
+            "scene_number": 5,
+            "duration_seconds": 5,
+            "description": "The aliens reveal they're searching for the city's lost energy core - a dormant ancient artifact buried beneath London.",
+            "camera": "Two-shot of Clara and the alien leader, transitioning to a wide shot of the awakening artifact",
+            "lighting": "Golden light erupting from the core, illuminating both characters",
+            "characters": ["Clara", "Alien Leader"],
+            "dialogue": "We seek balance, not conquest. The core must awaken.",
+            "video_prompt": "Alien leader with glowing eyes communicates with Clara, energy core pulsating at center frame, light rays connecting the characters"
+        }
+    ]
+}
